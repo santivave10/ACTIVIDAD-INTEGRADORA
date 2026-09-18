@@ -41,20 +41,21 @@ def ejecutar_conversion(operacion, valor):
         case _:
             return "Operación no válida"
 
-while True:
-    print("===============================\n     CONVERSOR DE UNIDADES \n===============================")
-    print(" 1. Celsius → Fahrenheit\n 2. Fahrenheit → Celsius\n 3. Kilómetros → Millas\n 4. Millas → Kilómetros\n 5. Pesos Mexicanos → Dólares\n 6. Dólares → Pesos Mexicanos\n 7. Salir")
-    try:
-        operacion = int(input("Seleccione una opción: "))
+if __name__ == "__main__":
+    while True:
+        print("===============================\n     CONVERSOR DE UNIDADES \n===============================")
+        print(" 1. Celsius → Fahrenheit\n 2. Fahrenheit → Celsius\n 3. Kilómetros → Millas\n 4. Millas → Kilómetros\n 5. Pesos Mexicanos → Dólares\n 6. Dólares → Pesos Mexicanos\n 7. Salir")
+        try:
+            operacion = int(input("Seleccione una opción: "))
 
-        if operacion < 1 or operacion > 7:
-            print("Opción inválida")
-        elif operacion == 7:
-            print("Programa finalizado.")
-            break
-        else:
-            valor = float(input("Ingresa el valor: "))
-            resultado = ejecutar_conversion(operacion, valor)
-            print(f"Resultado: {resultado:.2f}")
-    except ValueError:
-        print("Error: debes ingresar un valor numérico.")
+            if operacion < 1 or operacion > 7:
+                print("Opción inválida")
+            elif operacion == 7:
+                print("Programa finalizado.")
+                break
+            else:
+                valor = float(input("Ingresa el valor: "))
+                resultado = ejecutar_conversion(operacion, valor)
+                print(f"Resultado: {resultado:.2f}")
+        except ValueError:
+            print("Error: debes ingresar un valor numérico.")
